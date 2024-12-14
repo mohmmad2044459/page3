@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء منشورات</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="page3/page3css.css">
+    <style>
+        
+    </style>
+</head>
+<body class="background">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-dark text-white w-100">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="page3/111.png" alt="Logo" width="30" height="30" class="d-inline-block me-2">
+            <h6 style="color: rgb(247, 243, 243);">Home</h6>
+        </a>
+
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#">
+                    <i class="bi bi-heart-fill text-danger"></i> Favorites
+                </a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Setting
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Filter Buttons -->
+<div class="container my-3 text-center">
+    <button class="btn btn-dark filter-btn active" data-filter="all">كل المنشورات</button>
+    <button class="btn btn-dark filter-btn" data-filter="accessories">اكسسوارات</button>
+    <button class="btn btn-dark filter-btn" data-filter="food">طعام</button>
+    <button class="btn btn-dark filter-btn" data-filter="delivery">توصيلات</button>
+</div>
+
+<div class="d-flex justify-content-end">
+    <button type="button" class="btn btn-info btn-lg mt-3" data-bs-toggle="modal" data-bs-target="#postModal">
+        نشر
+    </button>
+</div>
+
+<div class="container mt-4">
+    <div id="postsList">
+        <!-- سيتم إضافة المنشورات هنا -->
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="postModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="postModalLabel">إنشاء منشور جديد</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="modalPostForm" class="form-group">
+                    <div>
+                        <label for="modalTitleInput">العنوان</label>
+                        <input 
+                            type="text" 
+                            id="modalTitleInput"
+                            class="form-control" 
+                            placeholder="أدخل عنوان المنشور" 
+                            required 
+                        >
+                    </div>
+                    <div class="mt-3">
+                        <label for="modalDescriptionInput">الوصف</label>
+                        <textarea 
+                            id="modalDescriptionInput"
+                            class="form-control" 
+                            placeholder="أدخل وصف المنشور" 
+                            rows="4" 
+                            required
+                        ></textarea>
+                    </div>
+                    <div class="mt-3">
+                        <label for="modalPriceInput">السعر</label>
+                        <input 
+                            type="number" 
+                            id="modalPriceInput"
+                            class="form-control" 
+                            placeholder="أدخل السعر" 
+                            required 
+                        >
+                    </div>
+                    <div class="mt-3">
+                        <label for="modalPhoneInput">رقم الهاتف</label>
+                        <input 
+                            type="tel" 
+                            id="modalPhoneInput"
+                            class="form-control" 
+                            placeholder="أدخل رقم الهاتف" 
+                            required 
+                        >
+                    </div>
+                    <div class="mt-3">
+                        <label for="modalCategoryInput">الفئة</label>
+                        <select id="modalCategoryInput" class="form-control" required>
+                            <option value="">اختر فئة</option>
+                            <option value="accessories">اكسسوارات</option>
+                            <option value="food">طعام</option>
+                            <option value="delivery">توصيلات</option>
+                        </select>
+                    </div>
+                    <div class="mt-3">
+                        <label for="modalImageInput">صورة المنشور</label>
+                        <input 
+                            type="file" 
+                            id="modalImageInput"
+                            accept="image/*"
+                            class="form-control" 
+                            multiple
+                        >
+                    </div>
+                    <button 
+                        type="submit" 
+                        class="btn btn-success btn-block mt-3"
+                    >
+                        نشر المنشور
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="page3/page3js.js"></script>
+</body>
+</html>
